@@ -1,0 +1,9 @@
+# 静的ファイルを集める
+python manage.py collectstatic
+
+# GAEへデプロイ
+gcloud app deploy --project really-site-309106
+
+
+# Cloud SQLへ接続
+./secrets/cloud_sql_proxy -instances=really-site-309106:us-central1:really-site-test-instance=tcp:3306
